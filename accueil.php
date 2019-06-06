@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -15,16 +18,9 @@
     <div id="main">
         <div class="inner">
 
-            <!-- Header -->
-            <header id="header">
-                <a href="accueil.php" class="logo icon fa-microscope">
-                <strong>analyse_med : </strong>développé par OMRI-H</a>
-                <ul class="icons">
-                    <li><a href="#analyse_med" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-                    <li><a href="#analyse_med" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-                    <li><a href="#analyse_med" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-                </ul>
-            </header>
+          <?php
+include_once 'header.php';
+          ?>
 
             <!-- Banner -->
             <section id="banner">
@@ -86,65 +82,78 @@
                     <h2>10 derniers analyses</h2>
                 </header>
                 <div class="posts">
-                    <article>
-                        <h3>Interdum aenean</h3>
-                        <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper.</p>
+                    <?php if(isset($_SESSION['user_id']))  {
+                        ?>
+                        <article>
+                            <h3>Interdum aenean</h3>
+                            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper.</p>
 
-                        <ul class="actions">
-                            <li><a href="#" class="button">Detail</a></li>
-                            <li><a href="#" class="button">Modifier</a></li>
-                            <li><a href="#" class="button">Supprimer</a></li>
-                        </ul>
-                    </article>
-                    <article>
-                        <h3>Nulla amet dolore</h3>
-                        <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper.</p>
+                            <ul class="actions">
+                                <li><a href="#" class="button">Detail</a></li>
+                                <li><a href="#" class="button">Modifier</a></li>
+                                <li><a href="#" class="button">Supprimer</a></li>
+                            </ul>
+                        </article>
+                        <article>
+                            <h3>Nulla amet dolore</h3>
+                            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper.</p>
 
-                        <ul class="actions">
-                            <li><a href="#" class="button">Detail</a></li>
-                            <li><a href="#" class="button">Modifier</a></li>
-                            <li><a href="#" class="button">Supprimer</a></li>
-                        </ul>
-                    </article>
-                    <article>
-                        <h3>Tempus ullamcorper</h3>
-                        <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper.</p>
+                            <ul class="actions">
+                                <li><a href="#" class="button">Detail</a></li>
+                                <li><a href="#" class="button">Modifier</a></li>
+                                <li><a href="#" class="button">Supprimer</a></li>
+                            </ul>
+                        </article>
+                        <article>
+                            <h3>Tempus ullamcorper</h3>
+                            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper.</p>
 
-                        <ul class="actions">
-                            <li><a href="#" class="button">Detail</a></li>
-                            <li><a href="#" class="button">Modifier</a></li>
-                            <li><a href="#" class="button">Supprimer</a></li>
-                        </ul>
-                    </article>
-                    <article>
-                        <h3>Sed etiam facilis</h3>
-                        <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper.</p>
+                            <ul class="actions">
+                                <li><a href="#" class="button">Detail</a></li>
+                                <li><a href="#" class="button">Modifier</a></li>
+                                <li><a href="#" class="button">Supprimer</a></li>
+                            </ul>
+                        </article>
+                        <article>
+                            <h3>Sed etiam facilis</h3>
+                            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper.</p>
 
-                        <ul class="actions">
-                            <li><a href="#" class="button">Detail</a></li>
-                            <li><a href="#" class="button">Modifier</a></li>
-                            <li><a href="#" class="button">Supprimer</a></li>
-                        </ul>
-                    </article>
-                    <article>
-                        <h3>Feugiat lorem aenean</h3>
-                        <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper.</p>
+                            <ul class="actions">
+                                <li><a href="#" class="button">Detail</a></li>
+                                <li><a href="#" class="button">Modifier</a></li>
+                                <li><a href="#" class="button">Supprimer</a></li>
+                            </ul>
+                        </article>
+                        <article>
+                            <h3>Feugiat lorem aenean</h3>
+                            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper.</p>
 
-                        <ul class="actions">
-                            <li><a href="#" class="button">Detail</a></li>
-                            <li><a href="#" class="button">Modifier</a></li>
-                            <li><a href="#" class="button">Supprimer</a></li>
-                        </ul>
-                    </article>
-                    <article>
-                        <h3>Amet varius aliquam</h3>
-                        <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper.</p>
-                        <ul class="actions">
-                            <li><a href="#" class="button">Detail</a></li>
-                            <li><a href="#" class="button">Modifier</a></li>
-                            <li><a href="#" class="button">Supprimer</a></li>
-                        </ul>
-                    </article>
+                            <ul class="actions">
+                                <li><a href="#" class="button">Detail</a></li>
+                                <li><a href="#" class="button">Modifier</a></li>
+                                <li><a href="#" class="button">Supprimer</a></li>
+                            </ul>
+                        </article>
+                        <article>
+                            <h3>Amet varius aliquam</h3>
+                            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper.</p>
+                            <ul class="actions">
+                                <li><a href="#" class="button">Detail</a></li>
+                                <li><a href="#" class="button">Modifier</a></li>
+                                <li><a href="#" class="button">Supprimer</a></li>
+                            </ul>
+                        </article>
+                        <?php
+                    }else{
+                        ?>
+                        <article>
+                            <h3>Connectez-vous !</h3>
+                        </article>
+
+                        <?php
+                    }
+                    ?>
+
                 </div>
             </section>
 
@@ -156,36 +165,13 @@
         <div class="inner">
 
             <!-- Search -->
-            <section id="search" class="alt">
-                <form method="post" action="#">
-                    <input type="text" name="query" id="query" placeholder="Chercher" />
-                </form>
-            </section>
 
-            <!-- Menu -->
-            <nav id="menu">
-                <header class="major">
-                    <h2>Menu</h2>
-                </header>
-                <ul>
-                    <li><a href="accueil.php">accueil</a></li>
-                    <li><a href="analyses.php">Les analyses</a></li>
-                    <li><a href="utilisateurs.php">Les utilisateurs</a></li>
-                    <li><a href="patients.php">Les patients</a></li>
-                    <li><a href="contact.php">Contact</a></li>
-                </ul>
-            </nav>
 
-            <!-- Section -->
-            <section>
-                <header class="major">
-                    <h2>Analyse_med</h2>
-                </header>
-                <article>
-                    <a href="#" class="image"><img src="images/analyse.jpg" alt="" /></a>
-                    <p>Votre application de gestion des analyses !</p>
-                </article>
-            </section>
+            <?php
+            include_once 'search_bar.php';
+            include_once 'menu.php';
+            include_once 'section_img.php';
+            ?>
         </div>
     </div>
 

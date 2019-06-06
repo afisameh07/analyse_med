@@ -15,15 +15,9 @@
     <div id="main">
         <div class="inner">
 
-            <!-- Header -->
-            <header id="header">
-                <a href="index.php" class="logo"><strong>analyse_med : </strong>développé par OMRI-H</a>
-                <ul class="icons">
-                    <li><a href="#analyse_med" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-                    <li><a href="#analyse_med" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-                    <li><a href="#analyse_med" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-                </ul>
-            </header>
+           <?php
+           include_once 'header.php';
+           ?>
 
             <!-- Banner -->
             <section id="banner">
@@ -31,15 +25,15 @@
                     <header>
                         <h1>S'authentifier<br />
                     </header>
-                        <form action="/action_page.php">
+                        <form method="post" action="action_page.php">
                             <div class="form-group">
                                 <label for="email">Adresse email:</label>
-                                <input type="email" class="form-control" id="email">
+                                <input type="email" class="form-control" id="email" name="login">
                             </div>
                             <br>
                             <div class="form-group">
                                 <label for="pwd">Mot de passe:</label>
-                                <input type="password" class="form-control" id="pwd">
+                                <input type="password" class="form-control" id="pwd" name="pwd">
                             </div>
 <br>
                             <button type="submit" class="btn btn-primary">Connecter</button>
@@ -59,30 +53,11 @@
     <div id="sidebar">
         <div class="inner">
 
-            <!-- Search -->
-            <section id="search" class="alt">
-            </section>
-
-            <!-- Menu -->
-            <nav id="menu">
-                <header class="major">
-                    <h2>Menu</h2>
-                </header>
-                <ul>
-                    <li><a href="contact.php">Contact</a></li>
-                </ul>
-            </nav>
-
-            <!-- Section -->
-            <section>
-                <header class="major">
-                    <h2>Analyse_med</h2>
-                </header>
-                <article>
-                    <a href="#" class="image"><img src="images/analyse.jpg" alt="" /></a>
-                    <p>Votre application de gestion des analyses !</p>
-                </article>
-            </section>
+       <?php
+       include_once 'search_bar.php';
+       include_once 'menu.php';
+       include_once 'section_img.php';
+       ?>
         </div>
     </div>
 
