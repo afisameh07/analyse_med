@@ -5,12 +5,11 @@
  * Date: 06/06/2019
  * Time: 19:36
  */
+session_start();
 ?>
 <!-- Header -->
 <header id="header">
-    <a href="accueil.php" class="logo icon fa fa-id-card-o"></a>
-        <a href="accueil.php" class="logo icon fa fa-binoculars">
-
+    <a href="accueil.php" class="logo icon fa fa-id-card-o">
         <strong>analyse_med : </strong>développé par OMRI-H</a>
     <ul class="icons">
         <li><a href="#analyse_med" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
