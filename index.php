@@ -17,7 +17,7 @@
 
             <!-- Header -->
             <header id="header">
-                <a href="index.php" class="logo"><strong>analyse_med : </strong>analyses médicales développé par OMRI-H</a>
+                <a href="index.php" class="logo"><strong>analyse_med : </strong>développé par OMRI-H</a>
                 <ul class="icons">
                     <li><a href="#analyse_med" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
                     <li><a href="#analyse_med" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
@@ -36,11 +36,12 @@
                                 <label for="email">Adresse email:</label>
                                 <input type="email" class="form-control" id="email">
                             </div>
+                            <br>
                             <div class="form-group">
                                 <label for="pwd">Mot de passe:</label>
                                 <input type="password" class="form-control" id="pwd">
                             </div>
-
+<br>
                             <button type="submit" class="btn btn-primary">Connecter</button>
                         </form>
                 </div>

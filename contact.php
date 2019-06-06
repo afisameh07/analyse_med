@@ -17,7 +17,7 @@
 
             <!-- Header -->
             <header id="header">
-                <a href="index.html" class="logo"><strong>analyse_med : </strong>analyses médicales développé par OMRI-H</a>
+                <a href="index.html" class="logo"><strong>analyse_med : </strong>développé par OMRI-H</a>
                 <ul class="icons">
                     <li><a href="#analyse_med" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
                     <li><a href="#analyse_med" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
