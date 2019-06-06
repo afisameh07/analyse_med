@@ -17,7 +17,8 @@
 
             <!-- Header -->
             <header id="header">
-                <a href="accueil.php" class="logo"><strong>analyse_med : </strong>développé par OMRI-H</a>
+                <a href="accueil.php" class="logo icon fa-microscope">
+                <strong>analyse_med : </strong>développé par OMRI-H</a>
                 <ul class="icons">
                     <li><a href="#analyse_med" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
                     <li><a href="#analyse_med" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
@@ -40,43 +41,43 @@
                 </div>
 										<!-- Table -->
 													<div class="table-wrapper">
-														<table>
-															<thead>
-																<tr>
-																	<th>Nom</th>
-																	<th>Description</th>
-																	<th>Nombre</th>
-																</tr>
-															</thead>
-															<tbody>
-																<tr>
-																	<td>Item1dfbgdfg hthfr</td>
-																	<td>Ante turpis integer aliquet porttitor.</td>
-																	<td>29.99</td>
-																</tr>
-																<tr>
-																	<td>Item2</td>
-																	<td>Vis ac commodo adipiscing arcu aliquet.</td>
-																	<td>19.99</td>
-																</tr>
-																<tr>
-																	<td>Item3</td>
-																	<td> Morbi faucibus arcu accumsan lorem.</td>
-																	<td>29.99</td>
-																</tr>
-																<tr>
-																	<td>Item4</td>
-																	<td>Vitae integer tempus condimentum.</td>
-																	<td>19.99</td>
-																</tr>
-																<tr>
-																	<td>Item5</td>
-																	<td>Ante turpis integer aliquet porttitor.</td>
-																	<td>29.99</td>
-																</tr>
-															</tbody>
-														</table>
-													</div>
+                                                    <table>
+					    <thead>
+							<tr>
+						    	<th>Maladie</th>
+								<th>Description</th>
+								<th>Nombre</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Diabete</td>
+								<td>un excès de sucre dans le sang et donc un taux de glucose (glycémie) trop élevé.</td>
+								<td>9</td>
+						    </tr>
+                            <tr>
+								<td>Goutte</td>
+								<td>a goutte est une maladie chronique fréquente liée au métabolisme de l'acide urique.</td>
+								<td>5</td>
+						    </tr>
+                            <tr>
+								<td>Hypocalcémie</td>
+								<td>L’hypocalcémie est un état caractérisé par un taux de calcium dans le sang (calcémie) anormalement bas.</td>
+								<td>5</td>
+						    </tr>
+                            <tr>
+								<td>Hypercholestérolémie</td>
+								<td>un taux élevé de cholestérol sanguin.</td>
+								<td>5</td>
+						    </tr>
+                            <tr>
+								<td>Insuffisance rénale</td>
+								<td>L'insuffisance rénale chronique est une maladie grave qui entraîne une détérioration graduelle et irréversible de la capacité des reins à filtrer le sang et à excréter certaines hormones.</td>
+								<td>5</td>
+						    </tr>
+						</tbody>
+					</table>
+				</div>
             </section>
 
             <!-- Section -->

@@ -801,7 +801,7 @@ input, select, textarea {
 	}
 
 	header.major > :last-child {
-		border-bottom: solid 3px #f56a6a;
+		border-bottom: solid 3px #2196f3;
 		display: inline-block;
 		margin: 0 0 2em 0;
 		padding: 0 0.75em 0.5em 0;
@@ -2072,7 +2072,7 @@ input, select, textarea {
 		-webkit-transition: margin-left 0.5s ease, box-shadow 0.5s ease;
 		-ms-transition: margin-left 0.5s ease, box-shadow 0.5s ease;
 		transition: margin-left 0.5s ease, box-shadow 0.5s ease;
-		background-color: #f5f6f7;
+		background-color: #8bc34a;
 		font-size: 0.9em;
 		position: relative;
 		width: 26em;
@@ -2202,7 +2202,7 @@ input, select, textarea {
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
-		border-bottom: solid 5px #f56a6a;
+		border-bottom: solid 5px #2196f3;
 		padding: 6em 0 1em 0;
 		position: relative;
 	}
@@ -2389,7 +2389,7 @@ input, select, textarea {
 
 		#menu ul a, #menu ul span {
 			border-bottom: 0;
-			color: inherit;
+			color: white;
 			cursor: pointer;
 			display: block;
 			font-size: 0.9em;
