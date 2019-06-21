@@ -1,10 +1,9 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Analyse_med</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <?php 
+    include_once 'meta.php';
+    ?>
 </head>
 <body class="is-preload">
 
@@ -16,9 +15,17 @@
         <div class="inner">
 
           <?php
-include_once 'header.php';
-          ?>
-
+            include_once 'header.php';
+            if(isset($_GET['msg'])){
+                    ?>
+            <div class="center alert alert-success"><h4>
+                        <?php
+                echo $_GET['msg']; ?>
+                </h4>
+                </div>
+                <?php
+            }
+            ?>
             <!-- Banner -->
             <section id="banner">
                 <div class="content">
@@ -79,7 +86,7 @@ include_once 'header.php';
                     <h2>10 derniers analyses</h2>
                 </header>
                 <div class="posts">
-                    <?php if(isset($_SESSION['user_id']))  {
+                    <?php if(isset($_SESSION['uti']['id']))  {
                         ?>
                         <article>
                             <h3>Interdum aenean</h3>

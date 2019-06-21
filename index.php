@@ -1,10 +1,9 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Analyse_med</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
+<?php 
+    include_once 'meta.php';
+    ?>
 </head>
 <body class="is-preload">
 
@@ -20,23 +19,36 @@
            ?>
 
             <!-- Banner -->
+                
             <section id="banner">
                 <div class="content">
+                <?php
+            if(isset($_GET['msg'])){?>
+                <div class="center alert alert-danger"><h4>
+               <?php
+                echo $_GET['msg'];?>
+</h4>
+                </div>
+
+                <?php
+            }
+            ?>
                     <header>
+                    
                         <h1>S'authentifier<br />
                     </header>
                         <form method="post" action="action_page.php">
                             <div class="form-group">
                                 <label for="email">Adresse email:</label>
-                                <input type="email" class="form-control" id="email" name="login">
+                                <input type="email" class="form-control" id="email" name="login" placeholder="Votre email">
                             </div>
                             <br>
                             <div class="form-group">
                                 <label for="pwd">Mot de passe:</label>
-                                <input type="password" class="form-control" id="pwd" name="pwd">
+                                <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Votre mot de">
                             </div>
 <br>
-                            <button type="submit" class="btn btn-primary">Connecter</button>
+                            <button type="submit" class="btn btn-primary houc_b">Connecter</button>
                         </form>
                 </div>
 										<!-- Table -->

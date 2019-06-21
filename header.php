@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by IntelliJ IDEA.
- * User: afi_sameh
- * Date: 06/06/2019
- * Time: 19:36
- */
 session_start();
 ?>
 <!-- Header -->

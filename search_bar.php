@@ -6,7 +6,7 @@
  * Time: 19:18
  */
 
-if(isset($_SESSION['user_id']))  {
+if(isset($_SESSION['uti']['id']))  {
     ?>
     <section id="search" class="alt">
         <form method="post" action="#">

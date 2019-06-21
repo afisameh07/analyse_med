@@ -14,7 +14,7 @@
     </header>
     <ul>
         <li><a href="accueil.php">accueil</a></li>
-        <?php if(isset($_SESSION['user_id']))  {
+        <?php if(isset($_SESSION['uti']['id']))  {
             ?>
         <li><a href="analyse.php">Les analyses</a></li>
         <li><a href="utilisateurs.php">Les utilisateurs</a></li>

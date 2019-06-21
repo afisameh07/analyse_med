@@ -1,10 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Analyse_med</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <?php include_once 'connexion.php'; include_once 'meta.php'; ?>
 </head>
 <body class="is-preload">
 
@@ -16,18 +13,173 @@
         <div class="inner">
             <!-- Header -->
             <?php
-            include_once 'header.php';
+  include_once 'header.php';
+  if(isset($_GET['msg'])){
+          ?>
+  <div class="center alert alert-success"><h4>
+              <?php
+      echo $_GET['msg']; ?>
+      </h4>
+      </div>
+      <?php
+  } ?>
+            <!-- Banner -->
+            <button type="button" class="houc_b btn btn-info" data-toggle="modal" data-target="#myModal">Ajouter une analyse</button>
+          <?php 
+          
+          if(isset($_GET['id'])){          
+          ?>
+            <button type="button" class="houc_b btn btn-info" data-toggle="modal" data-target="#diag">Ajouter / Modifier : diagnostique</button>
+<?php 
+} ?>
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Ajouter une analyse</h4>
+      </div>
+      <div class="modal-body">
+      <form action="actions_analyse.php" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="titre">Titre :</label>
+                    <input type="text" class="form-control" id="titre" placeholder="Titre" name="titre" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="sel1">Patient:</label>
+                    <select class="form-control" id="sel1" name="id_u">
+                    <?php
+                    $sql = "SELECT * FROM utilisateurs where type='4'";
+                    $result = $conn->query($sql);
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) { 
+                            echo "<option value='".$row['id']."'>".$row['np']."</option>";
+                        }
+                    }
+?>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="uree">uree  :</label>
+                    <input type="text" class="form-control" id="uree" placeholder="5.0" name="uree" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="glycemie">glycemie :</label>
+                    <input type="text" class="form-control" id="glycemie" placeholder="12.1" name="glycemie" required>
+                </div>
+                <div class="form-group">
+                    <label for="createnine">Createnine:</label>
+                    <input type="text" class="form-control" id="createnine" placeholder="60.1" name="createnine" required>
+                </div>
+                <div class="form-group">
+                    <label for="cholestirol">Cholestirol :</label>
+                    <input type="text" class="form-control" id="cholestirol" placeholder="4.7" name="cholestirol" required>
+                </div>
+                <div class="form-group">
+                    <label for="triglyceride">Triglyceride :</label>
+                    <input type="text" class="form-control" id="triglyceride" placeholder="1.6" name="triglyceride" required>
+                </div>
+                <div class="form-group">
+                    <label for="calcuim">Calcuim :</label>
+                    <input type="text" class="form-control" id="calcuim" placeholder="2.2" name="calcuim" required>
+                </div>
+                <button type="submit" class="btn btn-primary houc_b" name="enreg_users" value="enreg_users">Enregistrer</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+            </form>
+      </div>
+      
+    </div>
+    </div>
+
+  </div>
+
+<!-- Modal -->
+<div id="diag" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Ajouter un diagnostique</h4>
+      </div>
+      <div class="modal-body">
+      <form action="actions_analyse.php" method="POST" enctype="multipart/form-data">
+      <input type="hidden" name="an_id" value="<?php echo $_GET['id']; ?>"/>
+        <div class="form-group">
+                    <label for="diag">Diagnostique :</label>
+                    <textarea class="form-control" rows="7" id="diag" name="diag"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary houc_b" name="enreg_diag" value="enreg_diag">Enregistrer</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+            </form>
+      </div>
+      
+    </div>
+    </div>
+
+  </div>
+<?php 
+
+            if(isset($_GET['id'])){
+
+                $sql = "SELECT * FROM analyses where id='".$_GET['id']."'";
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+
+                        $sql2 = "SELECT np FROM utilisateurs where id='".$row['id_u']."'";
+
+                        $result2 = $conn->query($sql2);
+                        if ($result2->num_rows > 0) {
+                            $row2 = $result2->fetch_assoc();
+                            $pat = $row2["np"];
+                            echo "<br><br><table><tr><td>Titre : </td><td>" . $row["titre"] ."</td></tr>
+                            <tr><td>Date d'ajout </td><td>" . $row["date_ajout"] . "</td></tr>
+                            <tr><td>Patient</td><td>" . $pat . "</td></tr>
+                            <tr><td>uree</td><td>" .$row["uree"] . "</td></tr>
+                            <tr><td>glycemie</td><td>" . $row["glycemie"] . "</td></tr>
+                            <tr><td>createnine</td><td>" . $row["createnine"] . "</td></tr>
+                            <tr><td>cholestirol</td><td>" . $row["cholestirol"] . "</td></tr>
+                            <tr><td>triglyceride</td><td>" . $row["triglyceride"] . "</td></tr>
+                            <tr><td>calcuim</td><td>" . $row["calcuim"] . "</td></tr>
+                            </table>";
+
+                            if($row['diag'] != ""){
+                                ?>
+                                <div class="alert alert-danger alert-dismissible">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Diagnostique  :</strong> <?php echo $row['diag'];?>.
+  </div><?php
+                            }
+
+
+                        } 
+                        
+                            
+                    }
+                }
+                $conn->close();
+            }else{
             ?>
 
-            <!-- Banner -->
             <header>
-                    <h2>Les derniers analyses</h2>
-                </header>
-                <div class="content">
+                    <h2>Les des analyses</h2>
+            </header>
+            <div class="content">
+                
                     <?php
                     include_once 't_analyses.php';
                     ?>
-                </div>
+            </div>
+            <?php } ?>
+
+
+
             </section>
 
         </div>
