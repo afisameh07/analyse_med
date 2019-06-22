@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 21, 2019 at 11:12 PM
+-- Generation Time: Jun 22, 2019 at 08:31 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -47,8 +47,8 @@ CREATE TABLE `analyses` (
 INSERT INTO `analyses` (`id`, `titre`, `id_u`, `uree`, `glycemie`, `createnine`, `cholestirol`, `triglyceride`, `calcuim`, `date_ajout`, `diag`) VALUES
 (1, 'tttt', '3', '3', '12', '60', '4', '1.9', '2.0', '2019-06-21 22:10:08', 'asselama jitiededef'),
 (4, 'iuoyiuyoi', '3', '8', '8', '8', '8', '8', '8', '2019-06-21 22:21:56', ''),
-(3, 'aslema aslema', '7', '5', '5', '5', '5', '5', '5', '2019-06-21 22:12:09', ''),
-(5, 'aslema222', '7', '3', '3', '4', '5', '6', '2.0', '2019-06-21 22:38:01', 'asqasas'),
+(3, 'aslema aslema', '7', '5', '5', '5', '5', '5', '5', '2019-06-21 22:12:09', 'ce patient besoin de :\r\n1 - trait 1\r\n2 - trait 2'),
+(5, 'aslema222', '7', '3', '3', '4', '5', '6', '2.0', '2019-06-21 22:38:01', 'une modification 2'),
 (6, 'zzzzzzzzzzzz', '7', '1', '2', '2', '1', '2', '2', '2019-06-21 22:45:56', 'asselma jiti lalla el 3aroussa');
 
 -- --------------------------------------------------------
@@ -73,10 +73,9 @@ CREATE TABLE `utilisateurs` (
 --
 
 INSERT INTO `utilisateurs` (`id`, `np`, `type`, `login`, `pwd`, `tel`, `adresse`, `description`) VALUES
-(1, 'admin', 1, 'admin@gmail.com', 'admin', '785765', 'Sidi Bouzid', 'ya3tik essa77a '),
-(3, 'houcem omri', 4, 'houcem@gmail.com', 'houcem', '9999999', 'houcem adresse ', 'houcem pfe'),
-(4, 'ali afi', 3, 'ali@gmail.com', 'ali', '111111', 'ali  bazda', 'ali ya mhabbalni'),
-(7, 'aslema', 4, 'aslema@gmail.com', 'aslema', '986789', 'asasa', 'aslema');
+(1, 'admin', 1, 'admin@gmail.com', 'admin', '785765', 'Sidi Bouzid', 'monsieur admin'),
+(3, 'houcem omri', 2, 'houcem@gmail.com', 'houcem', '9999999', 'houcem adresse ', 'houcem pfe'),
+(7, 'mohamed', 4, 'aslema@gmail.com', 'aslema', '986789', 'mohamed', 'mohamed');
 
 --
 -- Indexes for dumped tables
