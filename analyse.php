@@ -26,14 +26,13 @@
             <!-- Banner --><?php if(isset($_SESSION['uti']['type']) &&  $_SESSION['uti']['type'] != '4')  {
             ?>
             <button type="button" class="houc_b btn btn-info" data-toggle="modal" data-target="#myModal">Ajouter une analyse</button>
-            <li><a href="patients.php">Les patients</a></li>
+            
             <?php
             }
             ?>
           <?php 
           
           if(isset($_GET['id']) && isset($_SESSION['uti']['type']) &&  $_SESSION['uti']['type'] != '4')  {
-            ?>){          
           ?>
             <button type="button" class="houc_b btn btn-info" data-toggle="modal" data-target="#diag">Ajouter / Modifier : diagnostique</button>
 <?php 
