@@ -17,11 +17,35 @@
         <?php if(isset($_SESSION['uti']['id']))  {
             ?>
         <li><a href="analyse.php">Les analyses</a></li>
+        <?php
+        }
+        ?>
+        <?php
+        
+        if(isset($_SESSION['uti']['type']) && $_SESSION['uti']['type'] == '1')  {
+            ?>
         <li><a href="utilisateurs.php">Les utilisateurs</a></li>
+        <?php
+        }
+        ?>
+        <?php if(isset($_SESSION['uti']['type']) &&  $_SESSION['uti']['type'] != '4')  {
+            ?>
         <li><a href="patients.php">Les patients</a></li>
         <?php
         }
         ?>
-        <li><a href="contact.php">Contact</a></li>
+        <?php if(isset($_SESSION['uti']['type']) != 1)  {
+            ?>
+       <li><a href="contact.php">Contact</a></li>
+        <?php
+        }
+        ?>
+        
+        <?php if(isset($_SESSION['uti']['id']))  {
+            ?>
+        <li><a href="deconnexion.php">Deconnexion</a></li>
+        <?php
+        }
+        ?>
     </ul>
 </nav>

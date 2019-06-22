@@ -150,7 +150,7 @@ if(isset($_GET['id_update'])){
 
 
                                 echo "<tr><td>" . $row["np"] ."</td><td>" . $row["login"] . "</td><td>" . $row["tel"] . "</td><td>" . $row["adresse"] ."</td><td>" . $row["description"] ."</td>".
-                                "<td><a href='analyse.php?id=" . $row["id"] . "' class='page icon fa fa-eye'></a>".
+                                "<td><a href='analyse.php?id_pati=" . $row["id"] . "' class='page icon fa fa-eye'></a>".
                                 "<a href='supprimer.php?id_ps=" . $row["id"] . "' class='page icon fa fa-trash'></a>".
                                "<a href='patients.php?id_update=" . $row["id"] . "' class='page icon fa fa-retweet'></a>".
                                 "</td></tr>";

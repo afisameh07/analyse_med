@@ -85,7 +85,7 @@ $an_id = $_POST['an_id'];
 
 
     if ($conn->query($sql) === TRUE) {
-        $msg = "Succès d'ajout";
+        $msg = "Succès d'ajout / modification";
         header("location: analyse.php?id=".$an_id ."&msg=" . $msg);
     } else {
         $msg = "Erreur";

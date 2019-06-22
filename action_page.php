@@ -17,7 +17,7 @@ if(isset($_POST['login']) && !empty($_POST['login']) && $_POST['pwd'] && !empty(
        
         $_SESSION['uti'] = $row;
         echo 'utilisateurs connecter';
-        $msg = "Bienvenue : ".$_SESSION['uti']['nom']." ".$_SESSION['uti']['prenom'];
+        $msg = "Bienvenue : ".$_SESSION['uti']['np'];
         header("location: accueil.php?msg=".$msg);
     } else {
         header("location: index.php?msg=Erreur de connexion");

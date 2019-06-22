@@ -10,7 +10,15 @@
     <tbody>
     <tr>
     <?php
-                    $sql = "SELECT * FROM analyses";
+
+    if(isset($_GET['id_pati'])){
+        $sql = "SELECT * FROM analyses where id_u='".$_GET['id_pati']."'";
+    }elseif(isset($_SESSION['uti']['type']) &&  $_SESSION['uti']['type'] == '4'){
+        $sql = "SELECT * FROM analyses where id_u='".$_SESSION['uti']['id']."'";
+    }else{
+        $sql = "SELECT * FROM analyses";
+    }
+                    
                     $result = $conn->query($sql);
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {

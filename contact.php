@@ -43,7 +43,6 @@
                 <header class="major">
                     <h2>Envoyez nous un email</h2>
                 </header>
-                <form action="/action_page.php">
                     <div class="form-group">
                         <label for="email">Nom et Prenom:</label>
                         <input type="text" placeholder="Nom et Prenom" class="form-control" id="email">
@@ -61,8 +60,7 @@
                         <textarea name="demo-message" id="demo-message" placeholder="Entrez votre message" rows="6"></textarea>
                     </div>
 <br>
-                    <button type="submit" class="btn btn-primary">Envoyer</button>
-                </form>
+                    <a href="accueil.php?msg=Votre message à été envoyé" class="btn btn-primary">Envoyer</a>
 
             </section>
 

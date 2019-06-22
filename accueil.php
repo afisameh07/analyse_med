@@ -2,6 +2,7 @@
 <html>
 <head>
     <?php 
+    include_once 'connexion.php';
     include_once 'meta.php';
     ?>
 </head>
@@ -83,70 +84,42 @@
             <!-- Section -->
             <section>
                 <header class="major">
-                    <h2>10 derniers analyses</h2>
+                    <h2>4 derniers analyses</h2>
                 </header>
                 <div class="posts">
                     <?php if(isset($_SESSION['uti']['id']))  {
                         ?>
-                        <article>
-                            <h3>Interdum aenean</h3>
-                            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper.</p>
 
-                            <ul class="actions">
-                                <li><a href="#" class="button">Detail</a></li>
-                                <li><a href="#" class="button">Modifier</a></li>
-                                <li><a href="#" class="button">Supprimer</a></li>
-                            </ul>
-                        </article>
-                        <article>
-                            <h3>Nulla amet dolore</h3>
-                            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper.</p>
+    <?php
 
-                            <ul class="actions">
-                                <li><a href="#" class="button">Detail</a></li>
-                                <li><a href="#" class="button">Modifier</a></li>
-                                <li><a href="#" class="button">Supprimer</a></li>
-                            </ul>
-                        </article>
-                        <article>
-                            <h3>Tempus ullamcorper</h3>
-                            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper.</p>
+   
+                    $sql = "SELECT * FROM analyses limit 4";                    
+                    $result = $conn->query($sql);
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
 
-                            <ul class="actions">
-                                <li><a href="#" class="button">Detail</a></li>
-                                <li><a href="#" class="button">Modifier</a></li>
-                                <li><a href="#" class="button">Supprimer</a></li>
-                            </ul>
-                        </article>
-                        <article>
-                            <h3>Sed etiam facilis</h3>
-                            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper.</p>
+                            $sql2 = "SELECT np FROM utilisateurs where id='".$row['id_u']."'";
 
-                            <ul class="actions">
-                                <li><a href="#" class="button">Detail</a></li>
-                                <li><a href="#" class="button">Modifier</a></li>
-                                <li><a href="#" class="button">Supprimer</a></li>
-                            </ul>
-                        </article>
-                        <article>
-                            <h3>Feugiat lorem aenean</h3>
-                            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper.</p>
+                            $result2 = $conn->query($sql2);
+                            if ($result2->num_rows > 0) {
+                                $row2 = $result2->fetch_assoc();
+                                $pat = $row2["np"];
+                            } 
+                            
+                                echo "<article><h3>" . $row['titre'] ."</h3>Date d ajout" . $row['date_ajout'] . "</br>";                                "";
+                                echo "Date d ajout : " . $row['date_ajout'] . "</br>";
+                                echo "uree :  ".$row['uree']. "</br>";
+                                echo "glycemie : ".$row['glycemie'] . "</br>";
+                                echo "createnine :  ".$row['cholestirol'] . "</br>";;
+                                echo "triglyceride :  ".$row['triglyceride'] . "</br>";; 
+                                echo "calcuim :  ".$row['calcuim'] . "</br>";; 
+                                echo "Analyse :  ".$row['diag'] . "</br>"; 
+                                echo "</article>";
+                            }
+                    }
+                    $conn->close();
+         ?>
 
-                            <ul class="actions">
-                                <li><a href="#" class="button">Detail</a></li>
-                                <li><a href="#" class="button">Modifier</a></li>
-                                <li><a href="#" class="button">Supprimer</a></li>
-                            </ul>
-                        </article>
-                        <article>
-                            <h3>Amet varius aliquam</h3>
-                            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper.</p>
-                            <ul class="actions">
-                                <li><a href="#" class="button">Detail</a></li>
-                                <li><a href="#" class="button">Modifier</a></li>
-                                <li><a href="#" class="button">Supprimer</a></li>
-                            </ul>
-                        </article>
                         <?php
                     }else{
                         ?>

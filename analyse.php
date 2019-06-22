@@ -23,11 +23,17 @@
       </div>
       <?php
   } ?>
-            <!-- Banner -->
+            <!-- Banner --><?php if(isset($_SESSION['uti']['type']) &&  $_SESSION['uti']['type'] != '4')  {
+            ?>
             <button type="button" class="houc_b btn btn-info" data-toggle="modal" data-target="#myModal">Ajouter une analyse</button>
+            <li><a href="patients.php">Les patients</a></li>
+            <?php
+            }
+            ?>
           <?php 
           
-          if(isset($_GET['id'])){          
+          if(isset($_GET['id']) && isset($_SESSION['uti']['type']) &&  $_SESSION['uti']['type'] != '4')  {
+            ?>){          
           ?>
             <button type="button" class="houc_b btn btn-info" data-toggle="modal" data-target="#diag">Ajouter / Modifier : diagnostique</button>
 <?php 
@@ -156,19 +162,24 @@
     <strong>Diagnostique  :</strong> <?php echo $row['diag'];?>.
   </div><?php
                             }
+                            ?>
+            <a class="btn btn-info" href="pdf.php?id_a=<?php echo $_GET['id']; ?>">Télécharger PDF</a>
+                    
+                    <?php
 
 
                         } 
                         
                             
                     }
+                    
                 }
                 $conn->close();
             }else{
             ?>
 
             <header>
-                    <h2>Les des analyses</h2>
+                    <h2>Listes des analyses</h2>
             </header>
             <div class="content">
                 
